@@ -1,0 +1,43 @@
+.navigationBar {
+  width: auto;
+  height: 200px;
+  background-color: rgb(0, 0, 0);
+}
+.links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
+}
+
+.active {
+  background-color: rgb(0, 247, 111);
+  width: 100px;
+  height: 55px;
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigationBar a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  font-family: fantasy;
+  margin-top: 35px;
+}
+.navigationBar a:hover{
+    text-decoration: underline;
+    font-size: x-large;
+    transition: all 0.3s;
+}
+.navigationBar h1{
+    text-decoration: underline;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-family: fantasy;
+    font-size: 50px;
+}
