@@ -11,6 +11,5 @@
 include_once("MyLibrary.php");
 function NavigationBar($Home);
 ?>
-    
 </body>
 </html>
