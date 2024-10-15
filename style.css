@@ -60,14 +60,14 @@ body {
   background-color: aqua;
 } */
 
-.shop-content {
+.image-container {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: thin;
   width: 100%;
 }
-.shop-content img {
+.image-container img {
   width: 300px;
   height: auto;
   margin-right: 20px;

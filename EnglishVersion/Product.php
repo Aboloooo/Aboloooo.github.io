@@ -14,7 +14,7 @@
     include_once("../phpLibrary/MyLibrary.php");
     NavigationBar("Product");
     ?>
-    <div class="shop-content">
+    <div class="image-container" id="imageContainer">
         <!-- <div class="product-box">
             <img src="../images/product1/product1.1.png" class="product-img">
             <h2 class="product-title">product 1</h2>
