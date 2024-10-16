@@ -37,3 +37,13 @@ function NavigationBar($DedicatedPage)
 };
 
 ?>
+
+<?php
+function imgsInRow()
+{
+    for ($i = 1; $i <= 9; $i++) {
+        print("<img src='../img/$i.png' alt=''>");
+    }
+}
+
+?>

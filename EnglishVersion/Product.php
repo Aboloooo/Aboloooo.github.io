@@ -14,14 +14,18 @@
     include_once("../phpLibrary/MyLibrary.php");
     NavigationBar("Product");
     ?>
-    <div class="image-container" id="imageContainer">
+
+    <div class="image-container">
         <!-- <div class="product-box">
             <img src="../images/product1/product1.1.png" class="product-img">
             <h2 class="product-title">product 1</h2>
             <span class="price">$10</span>
             <i class='bx bx-shopping-bag add-cart' id="cart-icon"></i>
         </div> -->
-        <img src="../img/1.png" alt="">
+        <?php
+        imgsInRow();
+        ?>
+        <!--  <img src="../img/1.png" alt="">
         <img src="../img/2.png" alt="">
         <img src="../img/3.png" alt="">
         <img src="../img/4.png" alt="">
@@ -29,7 +33,7 @@
         <img src="../img/6.png" alt="">
         <img src="../img/7.png" alt="">
         <img src="../img/8.png" alt="">
-        <img src="../img/9.png" alt="">
+        <img src="../img/9.png" alt=""> -->
     </div>
 
 </body>

@@ -11,5 +11,21 @@
       include_once("../phpLibrary/MyLibrary.php");
 NavigationBar("Contact");
 ?>
+
+<?php
+    if(!isset($_GET["name"])){
+        ("filed ". $_GET["name"] . "must be completed.");
+    }elseif(!isset($_GET["LastName"])){
+        print("filed ". $_GET["LastName"] . "must be completed.");
+    }elseif(!isset($_GET["Email"])){
+        print("filed ". $_GET["Email"] . "must be completed.");
+    }
+?>
+<form action="">
+    <input type="text" placeholder="First name" name="UserName">
+    <input type="text" placeholder="Last name" lastName="LastName">
+    <input type="email" placeholder="Email" Email="Email">
+    <input type="submit">
+</form>
 </body>
 </html>
