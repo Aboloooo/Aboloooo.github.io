@@ -15,22 +15,30 @@
     ?>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["submit"])) {
+    if (isset($_GET["submit"])) {
         submitForm();
     }
 
     function submitForm()
     {
-        if (empty($_GET["UserName"])) {
-            print("Form cant be submitted.");
-        } elseif (empty($_GET["LastName"])) {
-            print("Field in submision, Last name filled cant be empty");
-        } elseif (empty($_GET["Email"])) {
-            print("Field in submision, Email filled cant be empty");
+        if (isset($_GET["UserName"])) {
+            if ($_GET["UserName"] == "") {
+                print("Form cant be submitted.");
+            }
+        } elseif (isset($_GET["LastName"])) {
+            if ($_GET["LastName"] == "") {
+                print("Field in submision, Last name filled cant be empty");
+            }
+        } elseif (isset($_GET["Email"])) {
+            if ($_GET["LastName"] == "") {
+                print("Field in submision, Email filled cant be empty");
+            }
         } else {
             print("Form submitted successfully");
         }
     };
+
+    
 
     ?>
     <div class="form-location">
@@ -42,9 +50,12 @@
                 <input type="email" placeholder="Email" name="Email">
 
                 <a href="#">Forgotten password</a>
-                <button type="submit" name="submit">submit</button>
-                <!-- <input type="submit" name="submit"> -->
+
+
+                <input type="submit" name="submit">
             </form>
+            <a href="Contact.php">Reset the form and search</a>
+            <a href="Contact.php?UserName=Abolo">Abolo</a>
         </div>
     </div>
 
