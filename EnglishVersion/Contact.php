@@ -69,8 +69,8 @@
                 <a href="#" class="Forgotten-password">Forgotten password</a>
 
                 <div class="countryCodeSelection">
-                    <select name="countryCode" id="countryCode">
-                        <option value="default">country</option>
+                    <select name="countryCode" id="countryCode" require>
+                        <option value="default" selected="selected">country</option>
                         <?php
                         $countries = [
                             "Luxembourg",
@@ -83,14 +83,15 @@
                             "Norway",
                             "Greece",
                             "Poland"
-                        ]
-                        
+                        ];
+                        foreach ($countries as $country) {
                         ?>
-                        <option value="Luxembourg">Luxembourg</option>
-                        <option value="Germany">Germany</option>
-                        <option value="France">France</option>
+                            <option value="<?= $country ?>"><?= $country ?></option>
+                        <?php
+                        }
+                        ?>
                     </select>
-
+                    <input type="tel" value="" name="phoneNumber" placeholder="GSM" pattern="[0-9]{9}">
                 </div>
 
 
