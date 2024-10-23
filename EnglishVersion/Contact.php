@@ -42,16 +42,18 @@
             "Key2" => "LastName",
             "Key3" => "Email"
         );
+        $flag = true;
         foreach ($inputs as $key => $value) {
             if (isset($_GET[$value])) {
                 if ($_GET[$value] == "") {
                     print("Please filled up all the inputs! form submission failed");
-                    break;
-                } else {
-                    print("Form submitted successfully!");
+                    $flag = false;
                     break;
                 }
             }
+        }
+        if ($flag == true) {
+            print("Form has been submitted succefully!");
         }
     };
 
@@ -64,8 +66,34 @@
                 <input type="text" placeholder="First name" name="UserName">
                 <input type="text" placeholder="Last name" name="LastName">
                 <input type="email" placeholder="Email" name="Email">
-
                 <a href="#" class="Forgotten-password">Forgotten password</a>
+
+                <div class="countryCodeSelection">
+                    <select name="countryCode" id="countryCode">
+                        <option value="default">country</option>
+                        <?php
+                        $countries = [
+                            "Luxembourg",
+                            "France",
+                            "Germany",
+                            "Italy",
+                            "Spain",
+                            "Netherlands",
+                            "Sweden",
+                            "Norway",
+                            "Greece",
+                            "Poland"
+                        ]
+                        
+                        ?>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Germany">Germany</option>
+                        <option value="France">France</option>
+                    </select>
+
+                </div>
+
+
 
                 <input type="submit" name="submit">
             </form>
