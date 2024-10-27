@@ -14,19 +14,34 @@
     include_once("../phpLibrary/MyLibrary.php");
     NavigationBar("Product");
     ?>
-
     <div class="image-container">
-        <!-- <div class="product-box">
-            <img src="../images/product1/product1.1.png" class="product-img">
-            <h2 class="product-title">product 1</h2>
-            <span class="price">$10</span>
-            <i class='bx bx-shopping-bag add-cart' id="cart-icon"></i>
-        </div> -->
+
         <?php
-        imgsInRow();
+        $ProductsDataBase = fopen("../DataBases/Products.csv", "r");
+        $line = fgets($ProductsDataBase);
+        while (!feof($ProductsDataBase)) {
+            $line = fgets($ProductsDataBase);
+            $splitsOfEachLine = explode(",", $line);
+            // print("<div>.$line.</div>");
+            if (count($splitsOfEachLine) <= 7) {
         ?>
+
+                <div class="product-box">
+                    <img src="<?= $splitsOfEachLine[7] ?>" class="product-img">
+                    <h2 class="product-title"><?= $splitsOfEachLine[1] ?></h2>
+                    <span class="price"><?= $splitsOfEachLine[3] ?></span>
+                    <p><?= $splitsOfEachLine[5] ?></p>
+                    <p><?= $splitsOfEachLine[6] ?></p>
+                    <i class='bx bx-shopping-bag add-cart' id="cart-icon"></i>
+                </div>
     </div>
 
+<?php
+            }
+        }
+?>
+
+<!-- ../img/Men/6/6.1.PNG -->
 </body>
 
 </html>
