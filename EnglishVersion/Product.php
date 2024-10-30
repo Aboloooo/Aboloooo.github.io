@@ -14,6 +14,26 @@
     include_once("../phpLibrary/MyLibrary.php");
     NavigationBar("Product");
     ?>
+
+    <?php
+    background_img("Product");
+    ?>
+    <div class="product-heading-img">
+        <div>
+            <div>
+                <img src="../img/backgro.png" alt="" class="background_img">
+            </div>
+            <div class="h2-1">
+                <h2>A World of Style and Fashion</h2>
+            </div>
+        </div>
+        <div>
+            <img src="../img/backgro2.png" alt="" class="background_img2">
+        </div>
+        <div class="h2-2">
+            <h2>Discover Your Best Look with Us! <br>Quality is No Accident; It is Our Commitment</h2>
+        </div>
+    </div>
     <div class="image-container">
 
         <?php
@@ -23,15 +43,16 @@
             $line = fgets($ProductsDataBase);
             $splitsOfEachLine = explode(",", $line);
             // print("<div>.$line.</div>");
-            if (count($splitsOfEachLine) <= 7) {
+            if (count($splitsOfEachLine) >= 6) {
+                //     print("test");
         ?>
-
                 <div class="product-box">
-                    <img src="<?= $splitsOfEachLine[7] ?>" class="product-img">
+                    <!-- ID,Name,Description,Price,Size,Gender,img -->
+                    <img src="<?= $splitsOfEachLine[6] ?>" class="product-img">
                     <h2 class="product-title"><?= $splitsOfEachLine[1] ?></h2>
                     <span class="price"><?= $splitsOfEachLine[3] ?></span>
+                    <p><?= $splitsOfEachLine[4] ?></p>
                     <p><?= $splitsOfEachLine[5] ?></p>
-                    <p><?= $splitsOfEachLine[6] ?></p>
                     <i class='bx bx-shopping-bag add-cart' id="cart-icon"></i>
                 </div>
     </div>
