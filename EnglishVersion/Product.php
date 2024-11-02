@@ -15,9 +15,6 @@
     NavigationBar("Product");
     ?>
 
-    <?php
-    background_img("Product");
-    ?>
     <div class="product-heading-img">
         <div>
             <div>
@@ -34,8 +31,9 @@
             <h2>Discover Your Best Look with Us! <br>Quality is No Accident; It is Our Commitment</h2>
         </div>
     </div>
-    <div class="image-container">
 
+
+    <div class="image-container">
         <?php
         $ProductsDataBase = fopen("../DataBases/Products.csv", "r");
         $line = fgets($ProductsDataBase);
@@ -50,19 +48,23 @@
                     <!-- ID,Name,Description,Price,Size,Gender,img -->
                     <img src="<?= $splitsOfEachLine[6] ?>" class="product-img">
                     <h2 class="product-title"><?= $splitsOfEachLine[1] ?></h2>
-                    <span class="price"><?= $splitsOfEachLine[3] ?></span>
+                    <span class="price"><?= $splitsOfEachLine[3] ?>€</span>
                     <p><?= $splitsOfEachLine[4] ?></p>
                     <p><?= $splitsOfEachLine[5] ?></p>
                     <i class='bx bx-shopping-bag add-cart' id="cart-icon"></i>
                 </div>
-    </div>
 
-<?php
+
+        <?php
             }
         }
-?>
+        ?>
+    </div>
+    <!-- the following function will create a end bar in the end of the content of a webpage -->
+    <?php
+    EndBar()
+    ?>
 
-<!-- ../img/Men/6/6.1.PNG -->
 </body>
 
 </html>

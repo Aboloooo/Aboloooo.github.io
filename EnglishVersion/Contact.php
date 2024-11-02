@@ -101,7 +101,10 @@
             <a href="Contact.php">Reset the form and search</a>
         </div>
     </div>
-
+    <!-- the following function will create a end bar in the end of the content of a webpage -->
+    <?php
+    EndBar()
+    ?>
 
 </body>
 
