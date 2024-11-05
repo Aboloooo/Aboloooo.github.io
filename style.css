@@ -83,23 +83,24 @@ body {
 
 .image-container {
   display: flex;
-  overflow-x: hidden;
+  overflow: hidden;
   white-space: nowrap;
   width: 100%;
   transition: transform 0.5s ease;
-  scrollbar-width: thin;
+  overflow-x:scroll ;
+  
   padding: 25px;
 }
 
 .product-box {
   margin-right: 10px;
-  max-width: 400px;
+  width: 400px;
   height: auto;
   cursor: pointer;
 }
 
 .product-box img {
-  width: 400px;
+  max-width: 400px;
   height: auto;
 }
 
@@ -111,6 +112,38 @@ body {
   font-weight: 550;
 }
 
+.parentDiv{
+  background-color: #87c2a6;
+  width: 100%;
+  display: flex;
+}
+
+.child1{
+  background-color: #41584e;
+  width: 50%;
+}
+
+.child2{
+  background-color: #19422f;
+  width: 50%;
+}
+.chilTwoAndOne{
+  display: flex;
+  justify-content: ;
+  align-items: center;
+}
+
+.mainImg{
+  background-color: #03f88e;
+  width: 600px;
+  height: auto;
+}
+
+.optinalImg{
+  background-color: #03f80f;
+  width: 100%;
+  height: 100px;
+}
 .End-Bar {
   background-color: rgb(32, 32, 32);
   margin: 100px 0px 25px;
