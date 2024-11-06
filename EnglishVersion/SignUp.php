@@ -13,7 +13,6 @@
     include_once("../phpLibrary/MyLibrary.php");
     NavigationBar("");
     ?>
-    <h1>Sign up page</h1>
 
     <div>
         <a href="Login.php"> Login </a>
