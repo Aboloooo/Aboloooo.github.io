@@ -14,6 +14,14 @@
     NavigationBar("Home");
     ?>
 
+    <div>
+        <a href="Login.php"> Login </a>
+    </div>
+
+    <div>
+        <a href="SignUp.php"> Sign up </a>
+    </div>
+
 </body>
 
 </html>
