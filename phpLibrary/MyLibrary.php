@@ -22,12 +22,10 @@ function NavigationBar($DedicatedPage)
                                             print("class='active'");
                                         } ?>>Contact</a>
 
-                <a href="About.php"
-                    <?php
-                    if ($DedicatedPage == "About") {
-                        print("class='active'");
-                    }
-                    ?>>About</a>
+                <a href="About.php" <?php
+                                        if ($DedicatedPage == "About") {
+                                         print("class='active'");
+                                        }?>>About</a>
             </div>
 
         </div>
