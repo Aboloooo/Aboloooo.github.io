@@ -18,8 +18,23 @@
         <a href="Login.php"> Login </a>
     </div>
 
+    <?php
+    if (isset($_POST["username"], $_POST["password"], $_POST["passwordConfirmation"])) {
+        if ($_POST["password"] == $_POST["passwordConfirmation"]) {
+            print("Registration in process, please be patient!");
+            $client_DataBase = fopen("../DataBases/Client_DataBase.csv", "a");
+            if (filesize("../DataBases/Client_DataBase.csv") === 0) {
+                fwrite($client_DataBase, "userName" . " => " . "Password");
+            };
+            fwrite($client_DataBase, "\n" . $_POST["username"] . " => " . $_POST["password"]);
+        } else {
+            print("Passwords do not match!");
+        }
+    }
+    ?>
+
     <div class="login-form">
-        <form action="" method="post">
+        <form action="" method="POST">
             <h1>Sign up</h1>
             <label for="Email">Email</label>
             <input type="text" placeholder="Email or Phone" name="username">
