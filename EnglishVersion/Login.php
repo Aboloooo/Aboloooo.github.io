@@ -16,16 +16,19 @@
     <?php
     $accounts = "../DataBases/Client_DataBase.csv";
 
+    //check if all the filleds are filled up
     if (isset($_POST["username"], $_POST["password"])) {
         $usernameInput = $_POST["username"];
         $passwordInput = $_POST["password"];
-        $SucessfulLogin = false;
+        $SucessfulLogin = false;    //Flags are really important
 
+        //check if the database exists
         if (file_exists($accounts)) {
             $OpenedFile = fopen($accounts, "r");
+            //Read the database line by line and separate the username and pass from eachother using explode function
             while (($line = fgets($OpenedFile)) !== false) {
                 list($username, $password) = explode(" => ", $line);
-
+                // check if user has an account already
                 if ($usernameInput == $username && $passwordInput == $password) {
                     print("Sucessful login!");
                     $SucessfulLogin = true;
@@ -59,7 +62,7 @@
                 <a href="SignUp.php">Create an account</a>
             </div>
 
-            <input type="submit" id="submit" placeholder="submit">
+            <input type="submit" id="submit" placeholder="submit" value="Submit">
 
         </form>
     </div>

@@ -23,9 +23,12 @@
         if ($_POST["password"] == $_POST["passwordConfirmation"]) {
             print("Registration in process, please be patient!");
             $client_DataBase = fopen("../DataBases/Client_DataBase.csv", "a");
+
+            //A condition to add header for the database
             if (filesize("../DataBases/Client_DataBase.csv") === 0) {
                 fwrite($client_DataBase, "userName" . " => " . "Password");
             };
+            //adding crendintial to database for ex) abolo => 123
             fwrite($client_DataBase, "\n" . $_POST["username"] . " => " . $_POST["password"]);
         } else {
             print("Passwords do not match!");
@@ -43,7 +46,7 @@
             <label for="password">Password confirmation</label>
             <input type="password" placeholder="Password confirmation" name="passwordConfirmation">
 
-            <input type="submit" id="submit" placeholder="submit">
+            <input type="submit" id="submit" placeholder="submit" value="Submit">
 
         </form>
     </div>
