@@ -11,7 +11,7 @@
 <body>
     <?php
     include_once("../phpLibrary/MyLibrary.php");
-    NavigationBarE("Contact");
+    NavigationBarF("Contact");
     ?>
 
     <?php
@@ -46,14 +46,14 @@
         foreach ($inputs as $key => $value) {
             if (isset($_GET[$value])) {
                 if ($_GET[$value] == "") {
-                    print("Please fill in all the inputs!");
+                    print("Veuillez remplir tous les champs !");
                     $flag = false;
                     break;
                 }
             }
         }
         if ($flag == true) {
-            print("Form has been submitted succefully!");
+            print("Le formulaire a été soumis avec succès !");
         }
     };
 
@@ -61,28 +61,28 @@
     ?>
     <div class="form-location">
         <div class="container-form">
-            <h3>Contact us</h3>
+            <h3>Contactez-nous</h3>
             <form action="" method="GET">
-                <input type="text" placeholder="First name" name="UserName">
-                <input type="text" placeholder="Last name" name="LastName">
+                <input type="text" placeholder="Prénom" name="UserName">
+                <input type="text" placeholder="Nom de famille" name="LastName">
                 <input type="email" placeholder="Email" name="Email">
-                <a href="#" class="Forgotten-password">Forgotten password</a>
+                <a href="#" class="Forgotten-password">Mot de passe oublié</a>
 
                 <div class="countryCodeSelection">
                     <select name="countryCode" id="countryCode" require>
-                        <option value="default" selected="selected">country</option>
+                        <option value="default" selected="selected">Pays</option>
                         <?php
                         $countries = [
                             "Luxembourg",
                             "France",
-                            "Germany",
-                            "Italy",
-                            "Spain",
-                            "Netherlands",
-                            "Sweden",
-                            "Norway",
-                            "Greece",
-                            "Poland"
+                            "Allemagne",
+                            "Italie",
+                            "Espagne",
+                            "Pays-Bas",
+                            "Suède",
+                            "Norvège",
+                            "Grèce",
+                            "Pologne"
                         ];
                         foreach ($countries as $country) {
                         ?>
@@ -96,14 +96,14 @@
 
 
 
-                <input type="submit" name="submit">
+                <input type="submit" value="Soumettre" name="submit">
             </form>
-            <a href="Contact.php">Reset the form and search</a>
+            <a href="Contact.php">Réinitialiser le formulaire et rechercher</a>
         </div>
     </div>
     <!-- the following function will create a end bar in the end of the content of a webpage -->
     <?php
-    EndBar()
+    EndBarF()
     ?>
 
 </body>

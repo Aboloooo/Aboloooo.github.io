@@ -12,7 +12,7 @@
 <body>
     <?php
     include_once("../phpLibrary/MyLibrary.php");
-    NavigationBarE("Product");
+    NavigationBarF("Product");
     ?>
 
     <div class="product-heading-img">
@@ -21,14 +21,14 @@
                 <img src="../img/backgro.png" alt="" class="background_img">
             </div>
             <div class="h2-1">
-                <h2>A World of Style and Fashion</h2>
+                <h2>Un monde de style et de mode</h2>
             </div>
         </div>
         <div>
             <img src="../img/backgro2.png" alt="" class="background_img2">
         </div>
         <div class="h2-2">
-            <h2>Discover Your Best Look with Us! <br>Quality is No Accident; It is Our Commitment</h2>
+            <h2>Découvrez votre meilleur look avec nous ! <br>La qualité n'est pas un hasard ; c'est notre engagement</h2>
         </div>
     </div>
 
@@ -62,7 +62,7 @@
     </div>
     <!-- the following function will create a end bar in the end of the content of a webpage -->
     <?php
-    EndBar()
+    EndBarF()
     ?>
 
 </body>

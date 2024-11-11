@@ -11,17 +11,18 @@
 <body>
     <?php
     include_once("../phpLibrary/MyLibrary.php");
-    NavigationBarE("Home");
+    NavigationBarF("Maison");
     ?>
-    <a href="../FrenchVersion/Maison.php">
-        <h1>Changer de langue</h1>
+
+    <a href="../EnglishVersion/Home.php">
+        <h1>Language switch</h1>
     </a>
     <div>
-        <a href="Login.php"> Login </a>
+        <a href="Login.php"> se connecter </a>
     </div>
 
     <div>
-        <a href="SignUp.php"> Sign up </a>
+        <a href="SignUp.php"> s'inscrire </a>
     </div>
 
 </body>

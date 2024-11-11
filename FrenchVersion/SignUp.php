@@ -11,17 +11,17 @@
 <body>
     <?php
     include_once("../phpLibrary/MyLibrary.php");
-    NavigationBarE("");
+    NavigationBarF("");
     ?>
 
     <div>
-        <a href="Login.php"> Login </a>
+        <a href="Login.php"> Se connecter </a>
     </div>
 
     <?php
     if (isset($_POST["username"], $_POST["password"], $_POST["passwordConfirmation"])) {
         if ($_POST["password"] == $_POST["passwordConfirmation"]) {
-            print("Registration in process, please be patient!");
+            print("Inscription en cours, veuillez patienter !");
             $client_DataBase = fopen("../DataBases/Client_DataBase.csv", "a");
 
             //A condition to add header for the database
@@ -31,22 +31,22 @@
             //adding crendintial to database for ex) abolo => 123
             fwrite($client_DataBase, "\n" . $_POST["username"] . " => " . $_POST["password"]);
         } else {
-            print("Passwords do not match!");
+            print("Les mots de passe ne correspondent pas!");
         }
     }
     ?>
 
     <div class="login-form">
         <form action="" method="POST">
-            <h1>Sign up</h1>
+            <h1>s'inscrire</h1>
             <label for="Email">Email</label>
-            <input type="text" placeholder="Email or Phone" name="username">
+            <input type="text" placeholder="Email ou GSM" name="username">
             <label for="password">Password</label>
             <input type="password" placeholder="Password" name="password">
-            <label for="password">Password confirmation</label>
-            <input type="password" placeholder="Password confirmation" name="passwordConfirmation">
+            <label for="password">Confirmation du mot de passe</label>
+            <input type="password" placeholder="Confirmation du mot de passe" name="passwordConfirmation">
 
-            <input type="submit" id="submit" placeholder="submit" value="Submit">
+            <input type="submit" id="submit" value="Soumettre">
 
         </form>
     </div>

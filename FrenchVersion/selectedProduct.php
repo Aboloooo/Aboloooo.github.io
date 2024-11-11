@@ -11,7 +11,7 @@
 <body>
     <?php
     include_once("../phpLibrary/MyLibrary.php");
-    NavigationBarE("Product");
+    NavigationBarF("Product");
     ?>
 
     <div class="parentDiv">

@@ -11,7 +11,7 @@
 <body>
     <?php
     include_once("../phpLibrary/MyLibrary.php");
-    NavigationBarE("");
+    NavigationBarF("");
     ?>
     <?php
     $accounts = "../DataBases/Client_DataBase.csv";
@@ -44,23 +44,23 @@
     ?>
 
     <div>
-        <a href="SignUp.php"> Sign up </a>
+        <a href="SignUp.php"> s'inscrire </a>
     </div>
 
     <div class="login-form">
         <form action="" method="POST">
-            <h1>Login</h1>
+            <h1>Se connecter</h1>
             <label for="username">Username</label>
             <input type="text" placeholder="Email or Phone" name="username">
             <label for="password">Password</label>
             <input type="password" placeholder="Password" name="password">
             <div>
 
-                <a href="#">Forgotten password</a>
-                <a href="SignUp.php">Create an account</a>
+                <a href="#">Mot de passe oublié</a>
+                <a href="SignUp.php">Créer un compte</a>
             </div>
 
-            <input type="submit" id="submit" placeholder="submit" value="Submit">
+            <input type="submit" id="submit" value="Soumettre">
 
         </form>
     </div>
