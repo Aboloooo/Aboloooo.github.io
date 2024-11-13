@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="../style.css? <?= time(); ?>">
     <script>
 
-window.onload = function() {
+        window.onload = function() {
             document.getElementById("btn").addEventListener("click", getLocation);
         };    
             function getLocation (){
             navigator.geolocation.getCurrentPosition(function(position){
                 const latitude = position.coords.latitude
                 const longitude = position.coords.longitude
-                let output = document.getElementById("output");
-
-                output.innerHTML = latitude + "<br>" + longitude
-
-                
+                let output = document.getElementById("output").toLowerCase;
+                 
+                if(output() == "home"){
+                    output.innerHTML = latitude + "<br>" + longitude
+                }else{
+                    alert("Error")
+                }    
             })
         }
     </script>
