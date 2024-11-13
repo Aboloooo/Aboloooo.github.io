@@ -20,19 +20,42 @@
 
     <?php
     if (isset($_POST["username"], $_POST["password"], $_POST["passwordConfirmation"])) {
-        if ($_POST["password"] == $_POST["passwordConfirmation"]) {
-            print("Registration in process, please be patient!");
-            $client_DataBase = fopen("../DataBases/Client_DataBase.csv", "a");
+        $usernameInput = $_POST["username"];
 
-            //A condition to add header for the database
-            if (filesize("../DataBases/Client_DataBase.csv") === 0) {
-                fwrite($client_DataBase, "userName" . " => " . "Password");
-            };
-            //adding crendintial to database for ex) abolo => 123
-            fwrite($client_DataBase, "\n" . $_POST["username"] . " => " . $_POST["password"]);
-        } else {
-            print("Passwords do not match!");
+        // check if user is already exist
+        $existingAccount = "../DataBases/Client_DataBase.csv";
+        $usernameAlreayExist = false;
+        if(file_exists($existingAccount)){
+            $OpenedFile = fopen($existingAccount , "r");
+
+            while(($line = fgets($OpenedFile))!== false){
+                list($username , $password) = explode(" => ", $line);
+                if($username == $usernameInput){
+                    print("This username is already taken, please choose another!");
+                    $usernameAlreayExist = true;
+                    break;
+                }
+            }
         }
+           
+        if (!$usernameAlreayExist)
+        {
+            if ($_POST["password"] == $_POST["passwordConfirmation"]) {
+                print("Registration in process, please be patient!");
+                $client_DataBase = fopen("../DataBases/Client_DataBase.csv", "a");
+    
+                //A condition to add header for the database
+                if (filesize("../DataBases/Client_DataBase.csv") === 0) {
+                    fwrite($client_DataBase, "userName" . " => " . "Password");
+                };
+                //adding crendintial to database for ex) abolo => 123
+                fwrite($client_DataBase, "\n" . $_POST["username"] . " => " . $_POST["password"]);
+            } else {
+                print("Passwords do not match!");
+            }
+
+        }
+        
     }
     ?>
 

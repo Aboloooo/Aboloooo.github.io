@@ -85,6 +85,11 @@ function EndBar()
 <?php
 }
 
+
+function onLoad(){
+    echo " on load function is working";
+}
+
 ?>
 
 <!-- French version  -->

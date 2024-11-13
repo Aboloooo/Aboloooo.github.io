@@ -96,7 +96,7 @@
 
 
 
-                <input type="submit" name="submit">
+                <input type="submit" value="submit" name="submit">
             </form>
             <a href="Contact.php">Reset the form and search</a>
         </div>
