@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+
+if (!isset($_SESSION["user"])) {
+    $_SESSION["user"] = false;
+}
+
+
 function NavigationBarE($DedicatedPage)
 {
 ?>
@@ -30,7 +38,6 @@ function NavigationBarE($DedicatedPage)
 
         </div>
     </nav>
-
 <?php
 };
 
@@ -86,7 +93,8 @@ function EndBar()
 }
 
 
-function onLoad(){
+function onLoad()
+{
     echo " on load function is working";
 }
 

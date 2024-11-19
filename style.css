@@ -48,6 +48,15 @@ body {
   font-size: 50px;
 }
 
+#langChanger {
+  display: inline-block;
+}
+
+#userName {
+  float: right;
+  display: inline;
+}
+
 /* Product page */
 
 .background_img {
