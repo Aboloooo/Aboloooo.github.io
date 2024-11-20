@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- bank of icon  https://boxicons.com/  -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="../style.css?<? time(); ?>">
 </head>
 
@@ -15,6 +17,7 @@
     ?>
     <?php
     $accounts = "../DataBases/Client_DataBase.csv";
+    $_SESSION["userIsAdmin"] = false;
 
     //check if all the filleds are filled up
     if (isset($_POST["username"], $_POST["password"])) {
@@ -35,8 +38,15 @@
                     // print("Login successful!");
                     $sucessfullLogin = true;
                     $_SESSION["user"] = true;
+                    $_SESSION["UserName"] = $usernameInput;
+                    // checking if the user is admin
+                    if($usernameInput=="admin"){
+                        $_SESSION["userIsAdmin"] = true;
+                    }
+                    
                     if (isset($_POST["submit"])) {
                         header("Location: Home.php");
+                        break;
                     }
                     break;
                 };

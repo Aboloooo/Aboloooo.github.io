@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- bank of icon  https://boxicons.com/  -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="../style.css? <?= time(); ?>">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -31,6 +33,19 @@
             <h2>Discover Your Best Look with Us! <br>Quality is No Accident; It is Our Commitment</h2>
         </div>
     </div>
+
+    <!-- Add new products btn !-->
+    <?php
+        if($_SESSION["userIsAdmin"] != false){
+            ?>
+            <a href="AddingNewProduct.php"><button class="button-24" role="button">Add new product</button></a>
+            <?php
+        }else{
+            ?>
+            <p>Our products</p>
+            <?php
+        };
+    ?>
 
 
     <div class="image-container">

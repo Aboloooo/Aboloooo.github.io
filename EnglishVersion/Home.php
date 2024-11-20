@@ -15,19 +15,12 @@
     include_once("../phpLibrary/MyLibrary.php");
     NavigationBarE("Home");
     ?>
+    
+
     <a href="../FrenchVersion/Maison.php" id="langChanger">
         <h1>Changer de langue</h1>
     </a>
-    <div id="userName">
-        <box-icon name='user'></box-icon>
-        <h3><?php
-            if ($_SESSION["user"]) {
-                print("user");          //here instead of priting user I must print the username
-            } else {                    //Do I need to add this div in the end of the navigation bar
-                echo "Unknown user";
-            }
-            ?> </h3>
-    </div>
+
     <div>
         <a href="Login.php"> <?php
                                 if ($_SESSION["user"]) {
@@ -40,7 +33,7 @@
                                     if (isset($_POST["Logout"])) {
                                         session_unset();
                                         session_destroy();
-                                        header("Refreash:0");  //this refreash doesnt function
+                                        header("Refresh:0");  //this refreash doesnt function
                                     }
                                 } else {
                                     print("Login");

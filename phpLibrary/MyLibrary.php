@@ -1,12 +1,5 @@
 <?php
 
-session_start();
-
-if (!isset($_SESSION["user"])) {
-    $_SESSION["user"] = false;
-}
-
-
 function NavigationBarE($DedicatedPage)
 {
 ?>
@@ -38,8 +31,32 @@ function NavigationBarE($DedicatedPage)
 
         </div>
     </nav>
+    <div id="userName">
+        <div>
+        <box-icon name='user'></box-icon>
+        <h3><?php
+            if ($_SESSION["user"]) {
+                print($_SESSION["UserName"]);          //here instead of priting user I must print the username that just logged in
+            } else {                    
+                echo "Unknown user";
+            }
+            ?> </h3>
+            </div>
+    </div>
+    
 <?php
 };
+
+session_start();
+
+if (!isset($_SESSION["user"])) {
+    $_SESSION["user"] = false;
+}
+
+if (!isset($_SESSION["userIsAdmin"]))
+{
+    $_SESSION["userIsAdmin"] = false;
+}
 
 ?>
 

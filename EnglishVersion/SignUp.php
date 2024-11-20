@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- bank of icon  https://boxicons.com/  -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="../style.css? <?= time(); ?>">
 </head>
 
@@ -46,10 +48,11 @@
     
                 //A condition to add header for the database
                 if (filesize("../DataBases/Client_DataBase.csv") === 0) {
-                    fwrite($client_DataBase, "userName" . " => " . "Password");
+                    fwrite($client_DataBase, "userName" . " => " . "Password" . " => " . "Level");
+                    fwrite($client_DataBase,"\n" . "admin" . " => " . "password" . " => " . "Admin");    //Admin created automatically
                 };
-                //adding crendintial to database for ex) abolo => 123
-                fwrite($client_DataBase, "\n" . $_POST["username"] . " => " . $_POST["password"]);
+                //adding crendintial to database for ex) abolo => 123 => Customer
+                fwrite($client_DataBase, "\n" . $_POST["username"] . " => " . $_POST["password"]. " => " . "Customer");
             } else {
                 print("Passwords do not match!");
             }

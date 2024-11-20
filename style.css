@@ -48,13 +48,14 @@ body {
   font-size: 50px;
 }
 
-#langChanger {
-  display: inline-block;
-}
-
 #userName {
+  width: 100%;
+  height: 100px;
+}
+#userName div {
   float: right;
-  display: inline;
+  height: 100px;
+  margin-right: 10px;
 }
 
 /* Product page */
@@ -153,6 +154,44 @@ body {
   width: 100%;
   height: 100px;
 }
+.button-24 {
+  background: #0bb162;
+  border: 1px solid #0bb162;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  transition: all 0.3s;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #0bb162;
+  transition: all 0.3s;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
 .End-Bar {
   background-color: rgb(32, 32, 32);
   margin: 100px 0px 25px;
@@ -167,6 +206,33 @@ body {
   padding: 30px;
   color: white;
 }
+
+/* Contact form */
+
+.container-new-product{
+  width: 70%;
+  height: 60vh;
+  background-color: #a0f498;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+
+}
+.img-new-product{
+  width: 50%;
+  height: 60vh;
+  background-color: #41584e;
+float: left;  
+}
+.detail-new-product{
+  width: 50%;
+  height: 60vh;
+  background-color: #c6ffe6;
+float: right;
+}
+
+
+
 /* Contact form */
 .form-location {
   display: flex;
