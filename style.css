@@ -154,6 +154,7 @@ body {
   width: 100%;
   height: 100px;
 }
+
 .button-24 {
   background: #0bb162;
   border: 1px solid #0bb162;
@@ -207,19 +208,18 @@ body {
   color: white;
 }
 
-/* Contact form */
-
 .container-new-product {
   width: 70%;
   height: 60vh;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 30px black;
+  border-radius: 10px;
+  z-index: 100;
 }
 .img-new-product {
   width: 50%;
   height: 60vh;
-  background-color: #2e6d52;
   float: left;
   display: flex;
   justify-content: center;
@@ -229,31 +229,18 @@ body {
 .detail-new-product {
   width: 50%;
   height: 60vh;
-  background-color: #0bb162;
   float: right;
-}
-.form {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  padding: 40px;
-  margin-top: 30px;
 }
-input {
-  border: none;
-  border-bottom: black solid 1px;
-  margin: 7px 0px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-input:nth-child(11) {
-  cursor: pointer;
-  color: white;
-  background-color: black;
-  margin-top: 40px;
-}
-input:nth-child(11):focus {
-  background-color: #393939;
+.detail-new-product input {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border: 0px;
+  border-bottom: 1px solid black;
 }
 
 /* Contact form */

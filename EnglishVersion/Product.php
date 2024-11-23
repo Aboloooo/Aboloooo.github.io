@@ -36,15 +36,15 @@
 
     <!-- Add new products btn !-->
     <?php
-        if($_SESSION["userIsAdmin"] != false){
-            ?>
-            <a href="AddingNewProduct.php"><button class="button-24" role="button">Add new product</button></a>
-            <?php
-        }else{
-            ?>
-            <p>Our products</p>
-            <?php
-        };
+    if ($_SESSION["userIsAdmin"] != false) {
+    ?>
+        <a href="AddingNewProduct.php"><button class="button-24" role="button">Add new product</button></a>
+    <?php
+    } else {
+    ?>
+        <h2>Our products</h2>
+    <?php
+    };
     ?>
 
 

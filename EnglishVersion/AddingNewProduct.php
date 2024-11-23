@@ -24,11 +24,18 @@
         $productDescription = $_POST["productDescription"];
         $productPrice = $_POST["productPrice"];
         $productSize = $_POST["productSize"];
-        $productGender = $_POST["productGender"];
 
+        $productGender = $_POST["productGender"];
+        $productGenderUpperCase = strtoupper($productGender);
+        if ($productGenderUpperCase != "MALE" && $productGenderUpperCase != "FEMALE" && $productGenderUpperCase != "BOTH") {
+            die("Error: Gender can be considered only (Male, Female or Both)");
+        }
+
+        // fail to import the img
+        // $productImg = $_POST["productImg"];
 
         // now checking if all the neccesary inputs are filled up
-        if (!isset($productName, $productDescription, $productPrice,  $productSize, $productGender, $productImg)) {
+        if (!isset($productName, $productDescription, $productPrice,  $productSize, $productGender)) {
             die("Error: One or more product details are missing.");
             $completedProductDetails = false;
         } else {
@@ -38,7 +45,7 @@
         if ($completedProductDetails) {
             // $productName, $productDescription, $productPrice,  $productSize, $productGender, $productImg
             $productBank =  fopen("../DataBases/Products.csv", "a");
-            $NewProduct = [$productName, $productDescription, $productPrice,  $productSize, $productGender, $productImg];
+            $NewProduct = [$productName, $productDescription, $productPrice,  $productSize, $productGender];
 
             fputcsv($productBank, $NewProduct);
         }
@@ -46,32 +53,31 @@
     ?>
 
     <div class="container-new-product">
-        <div class="img-new-product">
-            <form action="" method="POST">
+        <form action="" method="POST" class="form">
+            <div class="img-new-product">
+                <label for="productImg">Product Image:</label>
                 <input type="file" name="productImg">
-            </form>
-        </div>
-        <div class="detail-new-product">
-            <form action="" method="POST" class="form">
-                <label for="">Product name</label>
+            </div>
+            <div class="detail-new-product">
+                <label for="">Product name:</label>
                 <input type="text" name="productName">
 
-                <label for="">Description</label>
+                <label for="">Description:</label>
                 <input type="text" name="productDescription">
 
-                <label for="">Price</label>
-                <input type="number" name="productPrice">
+                <label for="">Price:</label>
+                <input type="money" name="productPrice">
 
-                <label for="">Sizes availible</label>
+                <label for="">Sizes availible:</label>
                 <input type="text" name="productSize">
 
-                <label for="">Gender usage</label>
+                <label for="">Gender usage:</label>
                 <input type="text" name="productGender">
 
                 <input type="submit" value="submit" name="submit">
-            </form>
-        </div>
 
+            </div>
+        </form>
     </div>
 
 
