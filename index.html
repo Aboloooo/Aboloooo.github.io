@@ -4,15 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+        display: none;
+      }
+    </style>
     <script>
+      let latitude, longitude; // Global variables for coordinates
+
       window.onload = function () {
         document.getElementById("btn").addEventListener("click", getLocation);
+        document.getElementById("btn-show").addEventListener("click", userMap);
+        document.getElementById("reveal").style.display = "none";
       };
 
       function getLocation() {
         navigator.geolocation.getCurrentPosition(function (position) {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+          latitude = position.coords.latitude; // Update global latitude
+          longitude = position.coords.longitude; // Update global longitude
           let input = document.getElementById("input").value;
           let inputCorrection = input.toLowerCase();
           let output = document.getElementById("output");
@@ -20,10 +37,35 @@
           if (inputCorrection == "home") {
             output.innerHTML =
               "latitude: " + latitude + "<br>" + "longitude: " + longitude;
+            document.getElementById("reveal").style.display = "block";
           } else {
             alert("Please try again!");
           }
         });
+      }
+
+      function userMap() {
+        if (latitude && longitude) {
+          // Display the map container
+          document.getElementById("map").style.display = "block";
+
+          // Initialize the map
+          const map = L.map("map").setView([latitude, longitude], 13);
+
+          // Add OpenStreetMap tiles
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          }).addTo(map);
+
+          // Add a marker for the user's location
+          L.marker([latitude, longitude])
+            .addTo(map)
+            .bindPopup("You are here!")
+            .openPopup();
+        } else {
+          alert("Coordinates not found. Please submit first.");
+        }
       }
     </script>
   </head>
@@ -32,8 +74,14 @@
     <h1>This is just a test, no worries!</h1>
     <div class="container">
       <input type="text" id="input" placeholder="write home here" />
-      <button id="btn">submit</button>
+      <button id="btn">Submit</button>
       <p id="output"></p>
+
+      <div id="reveal">
+        <h4 id="h4">What are those numbers?</h4>
+        <button value="show me" id="btn-show">Show me</button>
+      </div>
+      <div id="map"></div>
     </div>
   </body>
 </html>
